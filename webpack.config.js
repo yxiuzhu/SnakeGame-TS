@@ -20,7 +20,8 @@ module.exports = {
 
     // 告诉webpack不使用箭头
     environment: {
-      arrowFunction: false
+      arrowFunction: false,
+      const: false
     }
   },
 
@@ -71,6 +72,22 @@ module.exports = {
         use: [
           "style-loader",
           "css-loader",
+          // 引入postcss
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      browsers: 'last 2 versions'
+                    }
+                  ]
+                ]
+              }
+            }
+          },
           "less-loader"
         ]
       }

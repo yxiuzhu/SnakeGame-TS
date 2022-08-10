@@ -1,6 +1,3 @@
-// 引入样式
-import "./style/index.less";
-
 // 定义食物类Food
 class Food {
   // 定义一个属性表示食物对应的元素
@@ -31,10 +28,4 @@ class Food {
   }
 }
 
-const food =  new Food();
-console.log(food.X, food.Y);
-food.change();
-console.log(food.X, food.Y);
-
-console.log('hello TS');
-
+export default Food
